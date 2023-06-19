@@ -50,7 +50,8 @@ public class PhoneBookTest {
     @Test
     public void findByName(){
         final String expected = "111-111";
+        phoneBook.add("Two", "111-111");
         final String actual = phoneBook.findByName("Two");
-        assertThat(expected,is(equalToIgnoringWhiteSpace(actual)));
+        assertThat(expected,is(actual));
     }
 }
