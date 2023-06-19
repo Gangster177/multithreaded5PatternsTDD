@@ -27,4 +27,8 @@ public class PhoneBook {
         }
         return "The number is not in the contacts";
     }
+
+    public static String findByName(String name){
+        return null;
+    }
 }

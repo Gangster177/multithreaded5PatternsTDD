@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PhoneBookTest {
@@ -45,5 +45,12 @@ public class PhoneBookTest {
         phoneBook.add("Three", "333-333");
         final String actual = phoneBook.findByNumber("333-333");
         assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findByName(){
+        final String expected = "111-111";
+        final String actual = phoneBook.findByName("Two");
+        assertThat(expected,is(equalToIgnoringWhiteSpace(actual)));
     }
 }
