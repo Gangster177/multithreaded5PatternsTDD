@@ -41,7 +41,7 @@ public class PhoneBookTest {
 
     @Test
     public void findByNumber(){
-        final String expected = "333-333";
+        final String expected = "Three";
         phoneBook.add("Three", "333-333");
         final String actual = phoneBook.findByNumber("333-333");
         assertEquals(expected,actual);
