@@ -38,4 +38,12 @@ public class PhoneBookTest {
         final int actual = phoneBook.add("One", "222-222");
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void findByNumber(){
+        final String expected = "333-333";
+        phoneBook.add("Three", "333-333");
+        final String actual = phoneBook.findByNumber("333-333");
+        assertEquals(expected,actual);
+    }
 }
