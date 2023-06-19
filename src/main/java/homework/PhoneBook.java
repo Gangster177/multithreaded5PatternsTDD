@@ -25,11 +25,12 @@ public class PhoneBook {
         return "The number is not in the contacts";
     }
 
-    public static String findByName(String name){
+    public static String findByName(String name) {
         return phoneBook.get(name);
     }
 
-    public static List<String> printAllNames(){
-        return null;
+    public static List<String> printAllNames() {
+        List<String> keyList = new ArrayList<>(phoneBook.keySet());
+        return keyList;
     }
 }
