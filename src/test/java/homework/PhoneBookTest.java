@@ -33,8 +33,8 @@ public class PhoneBookTest {
 
     @Test
     public void addRepeatedContact (){
-        final int expected = 1;
-        phoneBook.add("One", "111-111");
+        final int expected = 2;
+        phoneBook.add("Two", "111-111");
         final int actual = phoneBook.add("One", "222-222");
         assertEquals(expected, actual);
     }
