@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PhoneBookTest {
     private static PhoneBook phoneBook = new PhoneBook();
     private static int testNumber;
+
     @BeforeAll
     public static void startTest() {
         System.out.println("Running Tests...");
@@ -32,7 +33,7 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void addRepeatedContact (){
+    public void addRepeatedContact() {
         final int expected = 2;
         phoneBook.add("Two", "111-111");
         final int actual = phoneBook.add("One", "222-222");
@@ -40,18 +41,24 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void findByNumber(){
+    public void findByNumber() {
         final String expected = "Three";
         phoneBook.add("Three", "333-333");
         final String actual = phoneBook.findByNumber("333-333");
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void findByName(){
+    public void findByName() {
         final String expected = "111-111";
         phoneBook.add("Two", "111-111");
         final String actual = phoneBook.findByName("Two");
-        assertThat(expected,is(actual));
+        assertThat(expected, is(actual));
+    }
+
+    @Test
+    public void printAllNames() {
+        String[] expected = {"One", "Two", "Three"};
+        assertThat(phoneBook.printAllNames(), contains(expected));
     }
 }

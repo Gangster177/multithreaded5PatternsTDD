@@ -1,9 +1,6 @@
 package homework;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PhoneBook {
     private static Map<String, String> phoneBook = new HashMap<>();
@@ -30,5 +27,9 @@ public class PhoneBook {
 
     public static String findByName(String name){
         return phoneBook.get(name);
+    }
+
+    public static List<String> printAllNames(){
+        return null;
     }
 }
